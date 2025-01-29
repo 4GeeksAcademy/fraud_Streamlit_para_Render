@@ -3,9 +3,10 @@ import streamlit as st
 import os
 from pickle import load
 from sklearn.tree import DecisionTreeClassifier
+import pickle
 
 # Ruta al archivo del modelo
-model = load(open("/workspaces/fraud/models/modelo_Arbol_optimizado.pkl", "rb"))
+model = load(open("/workspaces/fraud_para_Render/models/modelo_Arbol_optimizado.pkl", "rb"))
 
 # Diccionario de clases
 class_dict = {
