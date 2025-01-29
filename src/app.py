@@ -6,7 +6,7 @@ from sklearn.tree import DecisionTreeClassifier
 import pickle
 
 # Ruta al archivo del modelo
-model = load(open("/workspaces/fraud_para_Render/models/modelo_Arbol_optimizado.pkl", "rb"))
+model = load(open("/workspaces/fraud_para_Render/models/modelo_Arbol_optimizado.pkl"))
 
 # Diccionario de clases
 class_dict = {
