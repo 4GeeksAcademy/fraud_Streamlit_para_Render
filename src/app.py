@@ -1,12 +1,21 @@
 import joblib
 import streamlit as st
 import os
-from pickle import load
-from sklearn.tree import DecisionTreeClassifier
-import pickle
+from sklearn.ensemble import RandomForestClassifier
 
 # Ruta al archivo del modelo
-model = load(open("/workspaces/fraud_para_Render/models/modelo_Arbol_optimizado.pkl"))
+ruta_modelo = "/workspaces/fraud_para_Render/models/modelo_RandomForest_optimizado.pkl"
+
+# Verificar la existencia del archivo del modelo
+if not os.path.exists(ruta_modelo):
+    raise FileNotFoundError(f"El archivo {ruta_modelo} no existe")
+
+# Cargar el modelo
+model = joblib.load(ruta_modelo)
+
+# Verificar si el modelo está cargado correctamente
+if not isinstance(model, RandomForestClassifier):
+    raise TypeError("El archivo cargado no es un modelo RandomForest")
 
 # Diccionario de clases
 class_dict = {
